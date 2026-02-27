@@ -168,7 +168,7 @@ export function OrderForm() {
 
             <Button
               type="submit"
-              className="w-full py-7 text-lg font-bold uppercase tracking-widest"
+              className="hover:cursr-pointer w-full py-7 text-lg font-bold uppercase tracking-widest"
               disabled={form.formState.isSubmitting}
             >
               {form.formState.isSubmitting ? 'Processing...' : 'Confirm Order'}

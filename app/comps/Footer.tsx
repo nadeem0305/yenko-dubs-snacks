@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { Facebook, Instagram, Twitter, Mail } from 'lucide-react'
+import { Instagram, Twitter, Mail, Facebook } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -65,7 +64,7 @@ const Footer = () => {
                 <div className="p-2 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors">
                   <Mail className="h-4 w-4 text-primary" />
                 </div>
-                <span>support@yenkodubs.com</span>
+                <span>my-client-email@email.test</span>
               </Link>
             </div>
 
@@ -85,6 +84,12 @@ const Footer = () => {
                   className="p-2 rounded-full bg-zinc-100 dark:bg-zinc-900 hover:text-primary transition-all hover:scale-110"
                 >
                   <Twitter className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="#"
+                  className="p-2 rounded-full bg-zinc-100 dark:bg-zinc-900 hover:text-primary transition-all hover:scale-110"
+                >
+                  <Facebook className="h-4 w-4" />
                 </Link>
               </div>
             </div>
