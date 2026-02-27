@@ -1,7 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-// Define the shape of a single item in the cart
 export interface CartItem {
   name: string
   price: number
