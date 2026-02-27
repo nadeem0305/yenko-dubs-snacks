@@ -21,19 +21,19 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body className="w-full min-h-screen antialiased">
-          <ThemeProvider
+          {/* <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
-          >
-            <header className="flex justify-end items-center p-4 gap-4 h-16">
-              <Navbar />
-            </header>
-            <main className="pt-8">{children}</main>
-            <Toaster position="top-center" richColors />
-            <Footer />
-          </ThemeProvider>
+          > */}
+          <header className="flex justify-end items-center p-4 gap-4 h-16">
+            <Navbar />
+          </header>
+          <main className="pt-8">{children}</main>
+          <Toaster position="top-center" richColors />
+          <Footer />
+          {/* </ThemeProvider> */}
         </body>
       </html>
     </ClerkProvider>
