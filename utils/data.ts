@@ -1,20 +1,5 @@
 export const data = [
   {
-    name: 'CADBURY DAIRY MILK OREO',
-    src: '/images/img 1.png',
-    price: 45.0,
-  },
-  {
-    name: 'CADBURY DAIRY MILK',
-    src: '/images/img 2.png',
-    price: 45.0,
-  },
-  {
-    name: 'CADBURY DAIRY MILK ICED LATTE',
-    src: '/images/img 3.png',
-    price: 45.0,
-  },
-  {
     name: 'WERTHER’S ORIGINAL CARAMEL POPCORN',
     src: '/images/img 4.png',
     price: 80.0,
@@ -25,9 +10,34 @@ export const data = [
     price: 90.0,
   },
   {
+    name: 'CADBURY DAIRY MILK',
+    src: '/images/img 2.png',
+    price: 45.0,
+  },
+  {
     name: 'SWISS CHOCOLATIER (PISTACHIO & SHORTBREAD CRUNCHY CLOUDS)',
     src: '/images/img 6.png',
     price: 130.0,
+  },
+  {
+    name: 'NUTELLA BISCUITS',
+    src: '/images/img 10.png',
+    price: 115.0,
+  },
+  {
+    name: 'OREO O’S',
+    src: '/images/img 19.png',
+    price: 118.0,
+  },
+  {
+    name: 'CADBURY DAIRY MILK ICED LATTE',
+    src: '/images/img 3.png',
+    price: 45.0,
+  },
+  {
+    name: 'CADBURY DAIRY MILK OREO',
+    src: '/images/img 1.png',
+    price: 45.0,
   },
   {
     name: 'SWISS CHOCOLATIER (MALTY CHOCOLATE & CARAMEL BISCUITY CLOUDS)',
@@ -43,11 +53,6 @@ export const data = [
     name: 'MILK CHOCOLATE DIGESTIVES (Mc VITIES)',
     src: '/images/img 9.png',
     price: 65.0,
-  },
-  {
-    name: 'NUTELLA BISCUITS',
-    src: '/images/img 10.png',
-    price: 115.0,
   },
   {
     name: 'FOX’S CHOCOLATEY CHOC CHUNK COOKIES (MILK CHOCOLATE)',
@@ -90,11 +95,6 @@ export const data = [
     price: 145.0,
   },
   {
-    name: 'OREO O’S',
-    src: '/images/img 19.png',
-    price: 118.0,
-  },
-  {
     name: 'FOX’S FABULOUS HALF COATED MILK CHOCOLATE COOKIEs',
     src: '/images/img 20.png',
     price: 125.0,
@@ -113,5 +113,10 @@ export const data = [
     name: 'CADBURY WHITE (CREAMY WHITE CHOCOLATE)',
     src: '/images/img 23.png',
     price: 45.0,
+  },
+  {
+    name: 'OREO O’S II',
+    src: '/images/img 19.png',
+    price: 118.0,
   },
 ]
