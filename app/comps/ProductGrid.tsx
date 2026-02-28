@@ -49,8 +49,12 @@ export function ProductGrid() {
 
             <CardFooter className="p-2 md:p-4 pt-0">
               <Button
-                className="w-full py-6 uppercase font-black tracking-widest text-xs bg-primary text-white hover:bg-primary/90 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]
-  hover:cursor-pointer"
+                className="w-full py-7 uppercase font-black tracking-[0.2em] text-xs
+    hover:cursor-pointer transition-all duration-300 
+    hover:scale-[1.02] active:scale-[0.98]
+    bg-primary text-white hover:bg-primary/90
+    dark:bg-primary dark:text-zinc-950 dark:hover:bg-primary/90
+    dark:shadow-[0_0_20px_rgba(16,185,129,0.1)]"
                 onClick={() => {
                   addItem(snack)
                   toast.success(`${snack.name} added to cart`, {
