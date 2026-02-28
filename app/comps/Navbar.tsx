@@ -58,11 +58,10 @@ export function Navbar() {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/80 backdrop-blur-md  suppoers-backdrop-filter:bg-background/60">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* LEFT SECTION: Mobile Menu & Logo */}
         <div className="flex items-center gap-2 flex-1 justify-start">
-          {/* Mobile Hamburger - Visible only on small screens */}
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
@@ -75,8 +74,6 @@ export function Navbar() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="w-75 flex flex-col p-0">
-                {' '}
-                {/* Removed default padding */}
                 <SheetHeader className="text-left border-b p-6">
                   <SheetTitle className="text-xl font-black italic tracking-tighter">
                     YENKO<span className="text-primary">DUBS</span>
@@ -86,21 +83,12 @@ export function Navbar() {
                   </SheetDescription>
                 </SheetHeader>
                 <div className="flex flex-col gap-2 mt-4 px-2">
-                  {' '}
-                  {/* Added padding container */}
                   {navLinks.map((link) => (
                     <Link
                       key={link.name}
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="
-          text-lg font-bold uppercase tracking-widest 
-          px-4 py-4 rounded-xl
-          transition-all duration-200
-          hover:bg-primary/5 hover:text-primary
-          active:bg-primary/10 active:scale-[0.98]
-          flex items-center
-        "
+                      className="text-lg font-bold uppercase tracking-widest px-4 py-4 rounded-xl transition-all duration-200 hover:bg-primary/5 hover:text-primary active:bg-primary/10 active:scale-[0.98] flex items-center"
                     >
                       {link.name}
                     </Link>
@@ -110,7 +98,8 @@ export function Navbar() {
             </Sheet>
           </div>
 
-          <Link href="/" className="flex items-center gap-2">
+          {/* LOGO: Added 'hidden md:flex' to hide on mobile screens */}
+          <Link href="/" className="hidden md:flex items-center gap-2">
             <Image
               src="/images/logo.png"
               alt="Yenko Dubs Logo"
@@ -152,7 +141,15 @@ export function Navbar() {
               >
                 <ShoppingCart className="h-5 w-5 transition-transform duration-300 group-hover:scale-110 group-active:scale-90" />
                 {isClient && totalItems > 0 && (
-                  <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white animate-in zoom-in">
+                  <span
+                    className="absolute -top-1 -right-1 
+    flex h-5 w-5 items-center justify-center rounded-full 
+    bg-[#10b981] 
+    text-zinc-950 
+    text-[11px] font-black 
+     ring-zinc-950 
+    animate-in zoom-in duration-300"
+                  >
                     {totalItems}
                   </span>
                 )}
@@ -200,7 +197,7 @@ export function Navbar() {
                   </div>
                   <Button
                     onClick={handleCheckout}
-                    className="w-full py-7 text-md font-black uppercase tracking-[0.2em] hover:cursor-pointer transition-all hover:scale-[1.01]"
+                    className="w-full py-7 text-md font-black uppercase tracking-[0.2em] hover:cursor-pointer transition-all hover:scale-[1.01] bg-primary text-white dark:text-black hover:bg-primary/90"
                   >
                     Checkout Now
                   </Button>
@@ -209,14 +206,12 @@ export function Navbar() {
             </SheetContent>
           </Sheet>
 
-          {/* Auth Section */}
           <div className="flex items-center gap-2 pl-2 border-l ml-1">
             {isClient ? (
               <>
                 <SignedIn>
                   <UserButton
                     appearance={{
-                      baseTheme: undefined, // Let it be light by default
                       elements: {
                         userButtonPopoverCard:
                           'dark:bg-zinc-950 dark:border-zinc-800',
@@ -228,7 +223,6 @@ export function Navbar() {
                 </SignedIn>
                 <SignedOut>
                   <div className="flex items-center gap-2">
-                    {/* Log In - Now visible on all screens but smaller on mobile */}
                     <SignInButton mode="modal">
                       <Button
                         variant="ghost"
@@ -238,8 +232,6 @@ export function Navbar() {
                         Log In
                       </Button>
                     </SignInButton>
-
-                    {/* Join - High priority button */}
                     <SignUpButton mode="modal">
                       <Button
                         size="sm"
