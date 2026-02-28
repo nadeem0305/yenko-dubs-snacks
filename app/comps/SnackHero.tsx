@@ -30,7 +30,7 @@ export function SnackHero() {
             <Button
               size="lg"
               asChild
-              className="rounded-full px-8 h-14 text-lg shadow-xl group"
+              className="rounded-full px-8 h-14 text-lg shadow-xl group "
             >
               <Link href="/shop">
                 Shop All Snacks

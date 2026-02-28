@@ -5,6 +5,7 @@ import Footer from './comps/Footer'
 import { Navbar } from './comps/Navbar'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/components/theme-provider'
+import { dark } from '@clerk/themes'
 
 export const metadata: Metadata = {
   title: 'Yenko Dubs Snacks',
@@ -18,22 +19,40 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+        variables: {
+          // colorPrimary: '#10b981',
+          colorPrimary: '#f9f9f9',
+          colorBackground: '#09090b',
+          colorInputBackground: '#18181b',
+        },
+        elements: {
+          card: 'bg-zinc-950 border border-zinc-800 shadow-2xl',
+          headerTitle: 'italic font-black tracking-tighter',
+          socialButtonsBlockButton:
+            'bg-zinc-900 border-zinc-800 hover:bg-zinc-800 text-white',
+          formButtonPrimary:
+            'bg-primary hover:bg-primary/90 text-white font-bold uppercase',
+        },
+      }}
+    >
       <html lang="en" suppressHydrationWarning>
         <body className="w-full min-h-screen antialiased">
-          {/* <ThemeProvider
+          <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
+            defaultTheme="light"
+            enableSystem={false}
             disableTransitionOnChange
-          > */}
-          <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <Navbar />
-          </header>
-          <main className="pt-8">{children}</main>
-          <Toaster position="top-center" richColors />
-          <Footer />
-          {/* </ThemeProvider> */}
+          >
+            <header className="flex justify-end items-center p-4 gap-4 h-16">
+              <Navbar />
+            </header>
+            <main className="pt-8">{children}</main>
+            <Toaster position="top-center" richColors />
+            <Footer />
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

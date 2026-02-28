@@ -26,7 +26,7 @@ export function ProductGrid() {
             className="group flex flex-col justify-between overflow-hidden border-none shadow-sm"
           >
             {/* ... rest of your card content */}
-            <div className="relative aspect-square bg-[#f9f9f9]">
+            <div className="relative aspect-square bg-[#f9f9f9] dark:bg-zinc-800">
               <Image
                 src={snack.src}
                 alt={snack.name}
@@ -49,7 +49,8 @@ export function ProductGrid() {
 
             <CardFooter className="p-2 md:p-4 pt-0">
               <Button
-                className="hover:cursor-pointer w-full text-[10px] md:text-xs font-bold py-4 md:py-6 uppercase"
+                className="w-full py-6 uppercase font-black tracking-widest text-xs bg-primary text-white hover:bg-primary/90 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700 transition-all duration-300 hover:scale-[1.01] active:scale-[0.98]
+  hover:cursor-pointer"
                 onClick={() => {
                   addItem(snack)
                   toast.success(`${snack.name} added to cart`, {

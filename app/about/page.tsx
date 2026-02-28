@@ -20,8 +20,8 @@ export default function AboutPage() {
           <Image
             src="/images/logo.png"
             alt="Our Story"
-            fill
             className="object-contain p-12 opacity-50"
+            fill
           />
         </div>
 
@@ -29,9 +29,9 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold tracking-tight">Our Mission</h2>
           <p className="text-lg text-muted-foreground">
             Founded with a passion for quality, Yenko Dubs Snacks started as a
-            small project to help students and snack lovers find the best treats
-            without the hassle. Today, we source products from all over to
-            ensure every bite is an experience.
+            small project to help snack lovers find the best treats without the
+            hassle. Today, we source products from all over to ensure every bite
+            is an experience.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-2xl border p-4">
@@ -49,26 +49,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Team Section Placeholder */}
-      {/* <section className="bg-zinc-100 dark:bg-zinc-900/50 py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-8">The Team</h2>
-          <div className="flex justify-center">
-            <div className="flex flex-col items-center gap-4">
-              <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary">
-                <span className="text-2xl font-bold">AT</span>
-              </div>
-              <div>
-                <h3 className="font-bold">Abdul-Azeem Traoure Mohammed</h3>
-                <p className="text-sm text-muted-foreground">
-                  Founder & Lead Engineer
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </div>
   )
 }
