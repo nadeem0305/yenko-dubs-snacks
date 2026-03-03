@@ -1,9 +1,9 @@
 'use client'
 
+import OrderForm from '@/components/OrderForm'
 import { useCart } from '@/store/useCart'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
-import { OrderForm } from '../../components/OrderForm'
 
 export default function OrderPage() {
   const { items } = useCart()
@@ -11,7 +11,7 @@ export default function OrderPage() {
 
   useEffect(() => {
     if (items.length === 0) {
-      router.push('/order/success')
+      router.push('/order')
     }
   }, [items, router])
 

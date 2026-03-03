@@ -55,10 +55,11 @@ export function Navbar() {
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/shop' },
     { name: 'About', href: '/about' },
+    { name: 'Orders', href: '/my-orders' },
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/60">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/80 backdrop-blur-md supports-backdrop-filter:bg-background/60">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* LEFT SECTION: Mobile Menu & Logo */}
         <div className="flex items-center gap-2 flex-1 justify-start">
@@ -199,7 +200,7 @@ export function Navbar() {
                     onClick={handleCheckout}
                     className="w-full py-7 text-md font-black uppercase tracking-[0.2em] hover:cursor-pointer transition-all hover:scale-[1.01] bg-primary text-white dark:text-black hover:bg-primary/90"
                   >
-                    Checkout Now
+                    Checkout
                   </Button>
                 </div>
               )}
