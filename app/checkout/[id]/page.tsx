@@ -1,7 +1,7 @@
-
 import { sql } from '@/db'
-import PaystackPayment from '@/components/PaystackPayment'
 import { notFound } from 'next/navigation'
+import dynamic from 'next/dynamic'
+import PaystackPayment from '@/components/PaystackPayment'
 
 export default async function CheckoutPage({
   params,

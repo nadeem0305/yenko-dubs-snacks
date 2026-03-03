@@ -6,7 +6,7 @@ import { toast } from 'sonner'
 import { updateOrderStatus } from '@/app/actions/order'
 import { useRouter } from 'next/navigation'
 import { useCart } from '@/store/useCart'
-import dynamic from 'next/dynamic'
+import { PaystackButton } from 'react-paystack'
 
 interface PaystackPaymentProps {
   email: string
@@ -23,10 +23,6 @@ const schema = z.object({
     .max(100000, 'Maximum amount is 100,000'),
 })
 type FormData = z.infer<typeof schema>
-
-const PaystackButton = dynamic(() => import('@/components/PaystackPayment'), {
-  ssr: false,
-})
 
 export default function PaystackPayment({
   email,
