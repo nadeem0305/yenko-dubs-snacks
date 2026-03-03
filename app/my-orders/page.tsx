@@ -1,6 +1,5 @@
-// app/orders/page.tsx
 import { getUserOrders } from '@/app/actions/order'
-// import { format } from 'date-fns'
+import OrderDetails from '@/components/OrderDetails'
 import { Badge } from '@/components/ui/badge'
 
 export default async function OrdersPage() {
@@ -32,10 +31,9 @@ export default async function OrdersPage() {
                 <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1">
                   Order #{order.id.slice(0, 8)}
                 </p>
-                <h3 className="font-bold text-lg">
-                  {/* Parsing the JSON items we saved earlier */}
-                  {order.items.length}
-                </h3>
+                <h3 className="font-bold text-lg">{order.items.length}</h3>
+
+                <OrderDetails items={order.items} />
                 <p className="text-sm text-zinc-500">
                   {new Date(order.created_at).toLocaleDateString()}
                 </p>

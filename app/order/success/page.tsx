@@ -108,12 +108,22 @@ export default function SuccessPage() {
         </p>
       </div>
 
-      <Button
-        asChild
-        className="h-14 px-8 rounded-2xl font-black uppercase tracking-widest"
-      >
-        <Link href="/shop">Back to Shop</Link>
-      </Button>
+      <div className="space-x-5">
+        {/* PRIMARY BUTTON: Solid style */}
+        <Button
+          asChild
+          className="h-14 px-8 rounded-2xl font-black uppercase tracking-widest bg-zinc-950 text-white dark:bg-primary dark:text-zinc-950"
+        >
+          <Link href="/my-orders">View My Orders</Link>
+        </Button>
+        <Button
+          asChild
+          variant="outline"
+          className="h-14 px-8 rounded-2xl font-black uppercase tracking-widest border-2 border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900"
+        >
+          <Link href="/shop">Back to Shop</Link>
+        </Button>
+      </div>
     </div>
   )
 }
