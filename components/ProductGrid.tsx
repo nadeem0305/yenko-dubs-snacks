@@ -38,7 +38,6 @@ export function ProductGrid({ snacks }: { snacks: Product[] }) {
             </div>
 
             <CardContent className="p-3 md:p-4 space-y-1">
-              {/* Reduced text size for mobile so it doesn't wrap awkwardly */}
               <h3 className="font-bold text-xs md:text-sm uppercase line-clamp-2">
                 {snack.name}
               </h3>
