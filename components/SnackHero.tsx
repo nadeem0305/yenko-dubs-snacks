@@ -3,11 +3,18 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { data } from '@/utils/data'
 import { ArrowRight } from 'lucide-react'
 
-export function SnackHero() {
-  const collageSnacks = data.slice(0, 6)
+interface Product {
+  name: string
+  price: number
+  image_url: string
+  category?: string
+  is_available?: boolean
+}
+
+export function SnackHero({ snacks }: { snacks: Product[] }) {
+  const collageSnacks = snacks.slice(0, 6)
 
   return (
     <section className="px-4 md:px-6 pt-12 pb-16 md:py-24 w-full bg-background">
@@ -48,7 +55,7 @@ export function SnackHero() {
             >
               <div className="absolute inset-0 p-4 md:p-6 flex items-center justify-center">
                 <Image
-                  src={snack.src}
+                  src={snack.image_url}
                   alt={snack.name}
                   fill
                   className="object-contain p-4 md:p-6 group-hover:scale-110 transition-transform duration-500"

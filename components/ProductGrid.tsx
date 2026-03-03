@@ -3,31 +3,31 @@
 import Image from 'next/image'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { data } from '@/utils/data'
 import { useCart } from '@/store/useCart'
 import { toast } from 'sonner'
 
 interface Product {
   name: string
   price: number
-  src: string
+  image_url: string
+  category?: string
+  is_available?: boolean
 }
 
-export function ProductGrid() {
+export function ProductGrid({ snacks }: { snacks: Product[] }) {
   const addItem = useCart((state) => state.addItem)
 
   return (
     <section className="w-full max-w-full overflow-hidden px-4 py-6">
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
-        {data.map((snack: Product) => (
+        {snacks.map((snack: Product) => (
           <Card
             key={snack.name}
             className="group flex flex-col justify-between overflow-hidden border-none shadow-sm"
           >
-            {/* ... rest of your card content */}
             <div className="relative aspect-square bg-[#f9f9f9] dark:bg-zinc-800">
               <Image
-                src={snack.src}
+                src={snack.image_url}
                 alt={snack.name}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -42,7 +42,7 @@ export function ProductGrid() {
                 {snack.name}
               </h3>
               <p className="text-lg md:text-2xl font-black text-primary">
-                ₵{snack.price.toFixed(2)}
+                ₵{snack.price}
               </p>
             </CardContent>
 

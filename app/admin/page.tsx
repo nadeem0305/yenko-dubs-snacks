@@ -1,7 +1,7 @@
 import { sql } from '@/db'
 import { currentUser } from '@clerk/nextjs/server'
 import { redirect } from 'next/navigation'
-import { markAsDelivered } from '@/app/actions/admin'
+import { markAsDelivered, toggleAvailability } from '@/app/actions/admin'
 import { Truck } from 'lucide-react'
 
 export const metadata = {
@@ -24,6 +24,8 @@ export default async function AdminPage() {
     WHERE status = 'paid' 
     ORDER BY created_at ASC
   `
+
+  const allSnacks = await sql`SELECT * FROM snacks ORDER BY name ASC`
 
   return (
     <div className="max-w-6xl mx-auto p-6 pt-24">
@@ -100,6 +102,48 @@ export default async function AdminPage() {
           </div>
         ))}
       </div>
+
+      <section className="mt-20">
+        <h2 className="text-3xl font-black uppercase mb-6">
+          Inventory Manager
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          {allSnacks.map((snack) => (
+            <div
+              key={snack.id}
+              className="flex items-center justify-between p-5 border border-zinc-200 dark:border-zinc-800 rounded-3xl bg-white dark:bg-zinc-900/50 hover:border-primary/50 transition-colors"
+            >
+              {/* 1. Title Section: flex-1 makes this take up all available space */}
+              <div className="flex-1 min-w-0 mr-4">
+                <p className="font-black text-xs uppercase tracking-tight truncate">
+                  {snack.name}
+                </p>
+                <p className="text-sm font-medium text-zinc-500 italic">
+                  GH₵ {Number(snack.price).toFixed(2)}
+                </p>
+              </div>
+
+              {/* 2. Button Section: w-32 gives every button the exact same width */}
+              <form
+                action={async () => {
+                  'use server'
+                  await toggleAvailability(snack.id, snack.is_available)
+                }}
+              >
+                <button
+                  className={`w-32 py-2.5 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all active:scale-95 shadow-sm border ${
+                    snack.is_available
+                      ? 'bg-emerald-50 text-emerald-700 border-emerald-100'
+                      : 'bg-zinc-100 text-zinc-400 border-zinc-200'
+                  }`}
+                >
+                  {snack.is_available ? 'In Stock' : 'Sold Out'}
+                </button>
+              </form>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }

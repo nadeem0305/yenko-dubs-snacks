@@ -12,7 +12,7 @@ export function CartItem({ item }: { item: CartItemType }) {
     <div className="flex items-center gap-4 py-4 border-b">
       <div className="relative h-16 w-16 min-w-16 overflow-hidden rounded-md bg-secondary/50">
         <Image
-          src={item.src}
+          src={item.image_url}
           alt={item.name}
           fill
           className="object-contain p-2"

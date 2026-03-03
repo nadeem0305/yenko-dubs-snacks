@@ -17,3 +17,18 @@ export async function markAsDelivered(orderId: string) {
 
   revalidatePath('/admin')
 }
+
+export async function toggleAvailability(id: number, currentStatus: boolean) {
+  const user = await currentUser()
+  if (user?.emailAddresses[0].emailAddress !== process.env.ADMIN_EMAIL) return
+
+  await sql`
+    UPDATE snacks 
+    SET is_available = ${!currentStatus} 
+    WHERE id = ${id}
+  `
+
+  revalidatePath('/admin')
+  revalidatePath('/shop')
+  revalidatePath('/')
+}
