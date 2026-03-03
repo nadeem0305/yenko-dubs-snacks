@@ -1,4 +1,4 @@
-// app/checkout/[id]/page.tsx
+
 import { sql } from '@/db'
 import PaystackPayment from '@/components/PaystackPayment'
 import { notFound } from 'next/navigation'

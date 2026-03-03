@@ -7,6 +7,7 @@ import { toast } from 'sonner'
 import { updateOrderStatus } from '@/app/actions/order'
 import { useRouter } from 'next/navigation'
 import { useCart } from '@/store/useCart'
+import dynamic from 'next/dynamic'
 
 interface PaystackPaymentProps {
   email: string
@@ -24,6 +25,10 @@ const schema = z.object({
 })
 type FormData = z.infer<typeof schema>
 
+const PaystackButton = dynamic(() => import('@/components/PaystackPayment'), {
+  ssr: false,
+})
+
 export default function PaystackPayment({
   email,
   amount,
@@ -40,7 +45,6 @@ export default function PaystackPayment({
     publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY!,
     currency: 'GHS',
     channels: ['mobile_money'],
-    publicKey,
     metadata: {
       custom_fields: [
         {
