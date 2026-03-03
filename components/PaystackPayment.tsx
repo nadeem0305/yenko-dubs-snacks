@@ -55,17 +55,13 @@ export default function PaystackPayment({
       order_id: orderId,
     },
     onSuccess: async (reference: any) => {
-      // 1. Show a loading toast while we talk to Neon DB
       const updatingToast = toast.loading('Finalizing your Dub...')
 
-      // 2. Call the server action to update status to 'paid'
       const result = await updateOrderStatus(orderId, reference.reference)
 
       if (result.success) {
         clearCart()
         toast.success('Payment Verified!', { id: updatingToast })
-        // 3. Clear the cart (if using Zustand/Context) and redirect
-        // useCartStore.getState().clearCart()
         router.push('/order/success')
       } else {
         toast.error('Payment recorded, but DB update failed. Contact support.')
@@ -100,13 +96,14 @@ export default function PaystackPayment({
         </div>
 
         <PaystackButton
-          {...paystackConfig}
-          text="Pay Now"
+          {...(paystackConfig as any)}
           className="w-full h-16 rounded-2xl font-black uppercase tracking-widest hover:scale-[1.02] transition-all shadow-lg shadow-primary/20
           bg-zinc-950 text-white hover:opacity-90 
              dark:bg-primary dark:text-zinc-950 dark:hover:scale-[1.02]
          hover:cursor-pointer "
-        />
+        >
+          Pay Now
+        </PaystackButton>
 
         <p className="text-[9px] text-center uppercase font-bold opacity-30 tracking-widest">
           Secure Encrypted Transaction
