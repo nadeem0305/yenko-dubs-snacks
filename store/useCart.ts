@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
 export interface CartItem {
-  id: string
+  id: string | number
   name: string
   price: number
   image_url: string
@@ -11,7 +11,12 @@ export interface CartItem {
 
 interface CartState {
   items: CartItem[]
-  addItem: (product: { name: string; price: number; src: string }) => void
+  addItem: (product: {
+    id: string | number
+    name: string
+    price: number
+    image_url: string
+  }) => void
   removeItem: (name: string) => void
   clearCart: () => void
   deleteItem: (name: string) => void

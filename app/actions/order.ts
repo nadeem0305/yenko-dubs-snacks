@@ -4,7 +4,7 @@ import { sql } from '@/db'
 import { currentUser } from '@clerk/nextjs/server'
 
 interface CartItem {
-  id: string
+  id: string | number
   name: string
   price: number
   quantity: number

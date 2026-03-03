@@ -7,6 +7,7 @@ import { useCart } from '@/store/useCart'
 import { toast } from 'sonner'
 
 interface Product {
+  id: number | string
   name: string
   price: number
   image_url: string
@@ -55,7 +56,7 @@ export function ProductGrid({ snacks }: { snacks: Product[] }) {
     dark:bg-primary dark:text-zinc-950 dark:hover:bg-primary/90
     dark:shadow-[0_0_20px_rgba(16,185,129,0.1)]"
                 onClick={() => {
-                  addItem(snack)
+                  addItem(snack as any)
                   toast.success(`${snack.name} added to cart`, {
                     description: 'Check your cart to proceed to checkout.',
                   })
