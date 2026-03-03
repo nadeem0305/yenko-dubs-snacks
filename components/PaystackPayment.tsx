@@ -1,6 +1,5 @@
 'use client'
 
-import { PaystackButton } from 'react-paystack'
 import { z } from 'zod'
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
 import { toast } from 'sonner'
