@@ -7,7 +7,6 @@ import { data } from '@/utils/data'
 import { useCart } from '@/store/useCart'
 import { toast } from 'sonner'
 
-// 1. Define the Interface
 interface Product {
   name: string
   price: number

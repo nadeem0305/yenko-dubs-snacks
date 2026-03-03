@@ -1,4 +1,4 @@
-import { ProductGrid } from '../comps/ProductGrid'
+import { ProductGrid } from '../../components/ProductGrid'
 
 export default function ShopPage() {
   return (

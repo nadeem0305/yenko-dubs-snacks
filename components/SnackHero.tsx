@@ -7,7 +7,6 @@ import { data } from '@/utils/data'
 import { ArrowRight } from 'lucide-react'
 
 export function SnackHero() {
-  // We'll take 4 or 6 items to keep the grid even
   const collageSnacks = data.slice(0, 6)
 
   return (

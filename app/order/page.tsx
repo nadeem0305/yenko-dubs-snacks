@@ -3,7 +3,7 @@
 import { useCart } from '@/store/useCart'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
-import { OrderForm } from '../comps/OrderForm'
+import { OrderForm } from '../../components/OrderForm'
 
 export default function OrderPage() {
   const { items } = useCart()

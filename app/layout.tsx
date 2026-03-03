@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
-import Footer from './comps/Footer'
-import { Navbar } from './comps/Navbar'
+import Footer from '../components/Footer'
+import { Navbar } from '../components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/components/theme-provider'
 import { dark } from '@clerk/themes'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Yenko Dubs Snacks',
@@ -23,7 +24,6 @@ export default function RootLayout({
       appearance={{
         baseTheme: dark,
         variables: {
-          // colorPrimary: '#10b981',
           colorPrimary: '#f9f9f9',
           colorBackground: '#09090b',
           colorInputBackground: '#18181b',
@@ -40,6 +40,10 @@ export default function RootLayout({
     >
       <html lang="en" suppressHydrationWarning>
         <body className="w-full min-h-screen antialiased">
+          <Script
+            src="https://js.paystack.co/v1/inline.js"
+            strategy="beforeInteractive"
+          />
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
@@ -49,6 +53,7 @@ export default function RootLayout({
             <header className="flex justify-end items-center p-4 gap-4 h-16">
               <Navbar />
             </header>
+
             <main className="pt-8">{children}</main>
             <Toaster position="top-center" richColors />
             <Footer />

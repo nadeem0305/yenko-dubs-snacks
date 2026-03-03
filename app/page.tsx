@@ -1,4 +1,4 @@
-import { SnackHero } from './comps/SnackHero'
+import { SnackHero } from '../components/SnackHero'
 
 export default function Home() {
   return (
