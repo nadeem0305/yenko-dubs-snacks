@@ -6,7 +6,6 @@ import { Navbar } from '../components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/components/theme-provider'
 import { dark } from '@clerk/themes'
-import { useTheme } from 'next-themes'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
@@ -41,25 +40,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const { theme } = useTheme()
-
   return (
     <ClerkProvider
       appearance={{
-        baseTheme: theme === 'dark' ? dark : undefined,
+        // baseTheme: theme === 'dark' ? dark : undefined,
         variables: {
           colorPrimary: '#f9f9f9',
           colorBackground: '#09090b',
           colorInputBackground: '#18181b',
         },
-        // elements: {
-        //   card: 'bg-zinc-950 border border-zinc-800 shadow-2xl',
-        //   headerTitle: 'italic font-black tracking-tighter',
-        //   socialButtonsBlockButton:
-        //     'bg-zinc-900 border-zinc-800 hover:bg-zinc-800 text-white',
-        //   formButtonPrimary:
-        //     'bg-primary hover:bg-primary/90 text-white font-bold uppercase',
-        // },
+        elements: {
+          card: 'bg-zinc-950 border border-zinc-800 shadow-2xl',
+          headerTitle: 'italic font-black tracking-tighter',
+          socialButtonsBlockButton:
+            'bg-zinc-900 border-zinc-800 hover:bg-zinc-800 text-white',
+          formButtonPrimary:
+            'bg-primary hover:bg-primary/90 text-white font-bold uppercase',
+        },
       }}
     >
       <html lang="en" suppressHydrationWarning>
