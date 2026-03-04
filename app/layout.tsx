@@ -8,12 +8,6 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { dark } from '@clerk/themes'
 import Script from 'next/script'
 
-// export const metadata: Metadata = {
-//   title: 'Yenko Dubs Snacks',
-//   description:
-//     'Premium snacks delivered straight to your doorstep. Satisfying your cravings, one dub at a time.',
-// }
-
 export const metadata: Metadata = {
   title: 'Yenko Dubs Snacks',
   description:
