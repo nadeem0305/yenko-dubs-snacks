@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <ClerkProvider
       appearance={{
-        // baseTheme: theme === 'dark' ? dark : undefined,
+        baseTheme: dark,
         variables: {
           colorPrimary: '#f9f9f9',
           colorBackground: '#09090b',
