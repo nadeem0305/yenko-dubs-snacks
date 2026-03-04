@@ -129,7 +129,7 @@ body {
     @apply bg-background text-foreground;
   }
 }
-
+/* 
 [class*='cl-internal'] {
   &[class*='footer'],
   &[class*='badge'],
@@ -150,4 +150,4 @@ body {
 .cl-internal-1dauvpw,
 .cl-dev-badge {
   display: none !important;
-}
+} */

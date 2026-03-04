@@ -49,14 +49,14 @@ export default function RootLayout({
           colorBackground: '#09090b',
           colorInputBackground: '#18181b',
         },
-        elements: {
-          card: 'bg-zinc-950 border border-zinc-800 shadow-2xl',
-          headerTitle: 'italic font-black tracking-tighter',
-          socialButtonsBlockButton:
-            'bg-zinc-900 border-zinc-800 hover:bg-zinc-800 text-white',
-          formButtonPrimary:
-            'bg-primary hover:bg-primary/90 text-white font-bold uppercase',
-        },
+        // elements: {
+        //   card: 'bg-zinc-950 border border-zinc-800 shadow-2xl',
+        //   headerTitle: 'italic font-black tracking-tighter',
+        //   socialButtonsBlockButton:
+        //     'bg-zinc-900 border-zinc-800 hover:bg-zinc-800 text-white',
+        //   formButtonPrimary:
+        //     'bg-primary hover:bg-primary/90 text-white font-bold uppercase',
+        // },
       }}
     >
       <html lang="en" suppressHydrationWarning>
