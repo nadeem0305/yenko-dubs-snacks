@@ -8,10 +8,37 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { dark } from '@clerk/themes'
 import Script from 'next/script'
 
+// export const metadata: Metadata = {
+//   title: 'Yenko Dubs Snacks',
+//   description:
+//     'Premium snacks delivered straight to your doorstep. Satisfying your cravings, one dub at a time.',
+// }
+
 export const metadata: Metadata = {
   title: 'Yenko Dubs Snacks',
   description:
-    'Premium snacks delivered straight to your doorstep. Satisfying your cravings, one dub at a time.',
+    'Order the best Dubs snacks in Ghana. Fast delivery, fresh taste, and easy online payment. Satisfy your cravings with Yenko Dubs.',
+  keywords: [
+    'Yenko Dubs',
+    'Snacks Ghana',
+    'Buy snacks online Accra',
+    'Dubs Snacks',
+  ],
+  openGraph: {
+    title: 'Yenko Dubs Snacks',
+    description: 'The best snacks in Ghana, delivered to your door.',
+    url: 'https://yenko-dubs-snacks.com',
+    siteName: 'Yenko Dubs',
+    images: [
+      {
+        url: 'https://yenko-dubs-snacks.com/logo.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: 'en_GH',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
