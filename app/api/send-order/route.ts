@@ -16,22 +16,26 @@ export async function POST(req: Request) {
       .join('\n')
 
     const { data, error } = await resend.emails.send({
-      from: 'Yenko-Dubs-Snacks <onboarding@resend.dev>',
-      to: ['mohammedtraoure85@gmail.com'],
+      from: 'Yenko-Dubs-Snacks <orders@yenko-dubs-snacks.com>',
+      to: 'mohammedtraoure85@gmail.com',
       subject: `New Order from ${customer.fullName}`,
-      text: `
-        Customer Details:
-        Name: ${customer.fullName}
-        Phone: ${customer.phone}
-        Address: ${customer.address}
-        Notes: ${customer.notes || 'None'}
+      text: `New Order Received!
+  
+Customer Details:
+Name: ${customer.fullName}
+Phone: ${customer.phone}
+Address: ${customer.address}
+Notes: ${customer.notes || 'None'}
 
-        Order Summary:
-        ${itemList}
+Order Summary:
+${itemList}
 
-        Grand Total: ₵${total.toFixed(2)}
-      `,
+Grand Total: ₵${total.toFixed(2)}`,
     })
+
+    if (error) {
+      console.error('Resend Error:', error)
+    }
 
     if (error) return NextResponse.json({ error }, { status: 400 })
 
