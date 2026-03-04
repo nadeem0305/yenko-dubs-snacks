@@ -1,6 +1,8 @@
 import { getUserOrders } from '@/app/actions/order'
 import OrderDetails from '@/components/OrderDetails'
 import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 export default async function OrdersPage() {
   const { orders, success } = await getUserOrders()
@@ -15,10 +17,13 @@ export default async function OrdersPage() {
       </h1>
 
       {orders.length === 0 ? (
-        <div className="text-center py-20 border-2 border-dashed border-zinc-200 dark:border-zinc-800 rounded-3xl">
-          <p className="text-zinc-500 italic">
-            No snacks found in your history.
+        <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-4">
+          <p className="text-zinc-500">
+            You haven&apos;t placed any orders yet.
           </p>
+          <Button asChild>
+            <Link href="/shop">Start Snacking 🥨</Link>
+          </Button>
         </div>
       ) : (
         <div className="space-y-4">
