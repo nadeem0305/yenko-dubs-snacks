@@ -6,6 +6,7 @@ import { Navbar } from '../components/Navbar'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from '@/components/theme-provider'
 import { dark } from '@clerk/themes'
+import { useTheme } from 'next-themes'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
@@ -40,10 +41,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const { theme } = useTheme()
+
   return (
     <ClerkProvider
       appearance={{
-        baseTheme: dark,
+        baseTheme: theme === 'dark' ? dark : undefined,
         variables: {
           colorPrimary: '#f9f9f9',
           colorBackground: '#09090b',
