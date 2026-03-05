@@ -58,40 +58,14 @@ const Footer = () => {
                 Get In Touch
               </h3>
               <Link
-                href="mailto:support@yenkodubs.com"
+                href="mailto:Yenkodubs@gmail.com"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors group"
               >
                 <div className="p-2 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors">
                   <Mail className="h-4 w-4 text-primary" />
                 </div>
-                <span>my-client-email@email.test</span>
+                <span>Yenkodubs@gmail.com</span>
               </Link>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="font-bold uppercase tracking-widest text-xs">
-                Follow Us
-              </h3>
-              <div className="flex gap-4">
-                <Link
-                  href="#"
-                  className="p-2 rounded-full bg-zinc-100 dark:bg-zinc-900 hover:text-primary transition-all hover:scale-110"
-                >
-                  <Instagram className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="#"
-                  className="p-2 rounded-full bg-zinc-100 dark:bg-zinc-900 hover:text-primary transition-all hover:scale-110"
-                >
-                  <Twitter className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="#"
-                  className="p-2 rounded-full bg-zinc-100 dark:bg-zinc-900 hover:text-primary transition-all hover:scale-110"
-                >
-                  <Facebook className="h-4 w-4" />
-                </Link>
-              </div>
             </div>
           </div>
         </div>
