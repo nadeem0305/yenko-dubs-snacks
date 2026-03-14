@@ -38,21 +38,17 @@ export function ProductGrid({ snacks }: { snacks: Product[] }) {
             </div>
 
             <CardContent className="p-3 md:p-4 space-y-1">
-              <h3 className="font-bold text-xs md:text-sm uppercase line-clamp-2">
+              <h3 className="font-bold text-sm md:text-sm uppercase line-clamp-2 text-[#dfc8cc]">
                 {snack.name}
               </h3>
-              <p className="text-lg md:text-2xl font-black text-primary">
-                ₵{snack.price}
-              </p>
+              <p className="text-lg md:text-2xl font-black ">₵{snack.price}</p>
             </CardContent>
 
             <CardFooter className="p-2 md:p-4 pt-0">
               <Button
                 className="w-full py-7 uppercase font-black tracking-[0.2em] text-xs
-    hover:cursor-pointer transition-all duration-300 
-    hover:scale-[1.02] active:scale-[0.98]
-    bg-primary text-white hover:bg-primary/90
-    dark:bg-primary dark:text-zinc-950 dark:hover:bg-primary/90
+    hover:cursor-pointer transition-all duration-300 text-black
+    hover:scale-[1.02] active:scale-[0.98] bg-[#efbec6] hover:bg-[#fcd4db] hover:text-black
     dark:shadow-[0_0_20px_rgba(16,185,129,0.1)]"
                 onClick={() => {
                   addItem(snack as any)

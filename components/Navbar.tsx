@@ -3,7 +3,7 @@
 import { useState, useSyncExternalStore } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { ShoppingCart, Menu } from 'lucide-react'
+import { ShoppingCart, Menu, ShoppingBag } from 'lucide-react'
 import {
   UserButton,
   SignedIn,
@@ -76,8 +76,8 @@ export function Navbar() {
               </SheetTrigger>
               <SheetContent side="left" className="w-75 flex flex-col p-0">
                 <SheetHeader className="text-left border-b p-6">
-                  <SheetTitle className="text-xl font-black italic tracking-tighter">
-                    YENKO<span className="text-primary">DUBS</span>
+                  <SheetTitle className="text-xl font-black tracking-tighter">
+                    YENKODUBS
                   </SheetTitle>
                   <SheetDescription className="sr-only">
                     Navigation Menu
@@ -109,8 +109,8 @@ export function Navbar() {
               className="object-contain md:w-12 md:h-12 transition-transform hover:scale-105"
               priority
             />
-            <span className="hidden lg:block text-lg font-black tracking-tighter italic">
-              YENKO<span className="text-primary">DUBS</span>
+            <span className="hidden hover:scale-110 transition-all duration-300 active:scale-95 lg:block text-lg font-black text-[#efbec6] hover:text-[#ffe9ed] tracking-tighter">
+              YENKODUBS
             </span>
           </Link>
         </div>
@@ -121,7 +121,7 @@ export function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-bold uppercase tracking-widest hover:text-primary transition-all duration-300 hover:scale-110 active:scale-95"
+              className="text-sm font-bold uppercase tracking-widest transition-all duration-300 hover:scale-110 active:scale-95 text-[#efbec6] hover:text-[#ffe9ed]"
             >
               {link.name}
             </Link>
@@ -130,7 +130,9 @@ export function Navbar() {
 
         {/* RIGHT SECTION: Actions (Theme, Cart, Auth) */}
         <div className="flex items-center justify-end gap-2 md:gap-4 flex-1">
-          <ThemeToggle />
+          {/* <div className="text-[#efbec6] hover:text-white">
+            <ThemeToggle />
+          </div> */}
 
           {/* Cart Sheet */}
           <Sheet open={isCartOpen} onOpenChange={setIsCartOpen}>
@@ -138,9 +140,9 @@ export function Navbar() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="relative group transition-all duration-300 hover:bg-primary/10 hover:cursor-pointer"
+                className="relative group transition-all duration-300 hover:cursor-pointer text-[#efbec6] hover:text-[#ffe9ed]"
               >
-                <ShoppingCart className="h-5 w-5 transition-transform duration-300 group-hover:scale-110 group-active:scale-90" />
+                <ShoppingBag className="h-5 w-5 transition-transform duration-300 group-hover:scale-110 group-active:scale-90" />
                 {isClient && totalItems > 0 && (
                   <span
                     className="absolute -top-1 -right-1 
@@ -159,7 +161,7 @@ export function Navbar() {
             <SheetContent className="flex flex-col w-full sm:max-w-md p-0 gap-0">
               <div className="p-6 border-b">
                 <SheetHeader>
-                  <SheetTitle className="text-xl font-black uppercase tracking-tight italic">
+                  <SheetTitle className="text-xl font-black uppercase tracking-tight">
                     My Cart
                   </SheetTitle>
                   <SheetDescription className="sr-only">
@@ -171,7 +173,7 @@ export function Navbar() {
               <div className="flex-1 overflow-y-auto px-6">
                 {isClient && items.length === 0 ? (
                   <div className="h-full flex flex-col items-center justify-center space-y-2 opacity-40">
-                    <ShoppingCart className="h-10 w-10" />
+                    <ShoppingBag className="h-10 w-10" />
                     <p className="font-bold tracking-tighter">
                       Your basket is empty
                     </p>

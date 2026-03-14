@@ -67,15 +67,14 @@ export default function RootLayout({
           />
           <ThemeProvider
             attribute="class"
-            defaultTheme="light"
+            defaultTheme="dark"
             enableSystem={false}
-            disableTransitionOnChange
           >
             <header className="flex justify-end items-center p-4 gap-4 h-16">
               <Navbar />
             </header>
 
-            <main className="pt-8">{children}</main>
+            <main className="">{children}</main>
             <Toaster position="top-center" richColors />
             <Footer />
           </ThemeProvider>

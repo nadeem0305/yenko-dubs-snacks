@@ -23,7 +23,7 @@ export function SnackHero({ snacks }: { snacks: Product[] }) {
         <div className="space-y-8 text-center lg:text-left order-1">
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.85]">
-              The Ultimate <br />
+              The <span className="text-[#db919d]">Ultimate</span> <br />
               <span className="text-primary">Snack Dub.</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0">
@@ -36,7 +36,7 @@ export function SnackHero({ snacks }: { snacks: Product[] }) {
             <Button
               size="lg"
               asChild
-              className="rounded-full px-8 h-14 text-lg shadow-xl group "
+              className="rounded-full px-8 h-14 text-lg shadow-xl group bg-[#efbec6] hover:bg-[#fcd4db] hover:text-black"
             >
               <Link href="/shop">
                 Shop All Snacks
