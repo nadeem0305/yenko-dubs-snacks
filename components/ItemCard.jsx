@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
+import { Button } from '@/components/ui/button'
+import { Card, CardHeader, CardTitle, CardFooter } from '@/components/ui/card'
 
-import Image from "next/image";
+import Image from 'next/image'
 
 const ItemCard = ({ name, src, price }) => {
   return (
@@ -13,7 +13,7 @@ const ItemCard = ({ name, src, price }) => {
           alt=""
         />
       </div>
-      <CardHeader className="p-4">
+      <CardHeader className="p-4 ">
         <CardTitle className="text-sm font-medium leading-tight">
           {name}
         </CardTitle>
@@ -23,6 +23,6 @@ const ItemCard = ({ name, src, price }) => {
         <Button className="w-full">Add to Cart</Button>
       </CardFooter>
     </Card>
-  );
-};
-export default ItemCard;
+  )
+}
+export default ItemCard
