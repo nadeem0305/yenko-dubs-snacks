@@ -68,6 +68,7 @@ export default function RootLayout({
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
+            forcedTheme="dark"
             enableSystem={false}
           >
             <header className="flex justify-end items-center p-4 gap-4 h-16">
