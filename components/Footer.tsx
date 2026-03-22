@@ -64,7 +64,7 @@ const Footer = () => {
                 <div className="p-2 rounded-full bg-primary/5 group-hover:bg-primary/10 transition-colors">
                   <Mail className="h-4 w-4 text-primary" />
                 </div>
-                <span>Yenkodubs@gmail.com</span>
+                <span>yenkodubs@gmail.com</span>
               </Link>
             </div>
           </div>
