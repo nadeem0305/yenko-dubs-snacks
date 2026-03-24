@@ -3,7 +3,7 @@
 import { useState, useSyncExternalStore } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { ShoppingCart, Menu, ShoppingBag } from 'lucide-react'
+import { Menu, ShoppingBag } from 'lucide-react'
 import {
   UserButton,
   SignedIn,
@@ -24,7 +24,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 import Image from 'next/image'
-import { ThemeToggle } from './ToggleThemeButton'
+// import { ThemeToggle } from './ToggleThemeButton'
 
 const emptySubscribe = () => () => {}
 
