@@ -54,8 +54,8 @@ export function Navbar() {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/shop' },
-    { name: 'About', href: '/about' },
     { name: 'Orders', href: '/my-orders' },
+    { name: 'About', href: '/about' },
   ]
 
   return (

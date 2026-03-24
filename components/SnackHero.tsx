@@ -47,7 +47,7 @@ export function SnackHero({ snacks }: { snacks: Product[] }) {
         </div>
 
         {/* RIGHT: UNIFORM COLLAGE GRID */}
-        {/* <div className="order-2 lg:order-2 grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
+        <div className="hidden lg:grid order-2 grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
           {collageSnacks.map((snack, index) => (
             <div
               key={index}
@@ -63,21 +63,6 @@ export function SnackHero({ snacks }: { snacks: Product[] }) {
               </div>
             </div>
           ))}
-        </div> */}
-        <div className="order-2 w-full flex items-center justify-center">
-          <div className="relative w-full aspect-square md:aspect-video lg:aspect-square max-w-[600px] group">
-            {/* Decorative Glow behind the image */}
-            <div className="absolute inset-0 bg-white/20 blur-3xl rounded-full scale-75 group-hover:scale-90 transition-transform duration-700" />
-
-            <Image
-              src="/images/img 4.png"
-              alt="Yenko Dubs Premium Snacks"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] group-hover:scale-105 transition-transform duration-500 ease-in-out"
-            />
-          </div>
         </div>
       </div>
     </section>
