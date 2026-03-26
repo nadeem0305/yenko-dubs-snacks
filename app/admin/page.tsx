@@ -18,7 +18,6 @@ export default async function AdminPage() {
     redirect('/')
   }
 
-  // Fetch only Paid orders that aren't delivered yet
   const activeOrders = await sql`
     SELECT * FROM orders 
     WHERE status = 'paid' 
@@ -58,7 +57,7 @@ export default async function AdminPage() {
 
               <div>
                 <h2 className="text-2xl font-black uppercase">
-                  {order.user_name || 'Anonymous Student'}
+                  {order.user_name || 'Anonymous User'}
                 </h2>
                 <p className="text-zinc-500 font-bold">
                   {order.location} — {order.phone_number}
@@ -113,7 +112,6 @@ export default async function AdminPage() {
               key={snack.id}
               className="flex items-center justify-between p-5 border border-zinc-200 dark:border-zinc-800 rounded-3xl bg-white dark:bg-zinc-900/50 hover:border-primary/50 transition-colors"
             >
-              {/* 1. Title Section: flex-1 makes this take up all available space */}
               <div className="flex-1 min-w-0 mr-4">
                 <p className="font-black text-xs uppercase tracking-tight truncate">
                   {snack.name}
@@ -123,7 +121,6 @@ export default async function AdminPage() {
                 </p>
               </div>
 
-              {/* 2. Button Section: w-32 gives every button the exact same width */}
               <form
                 action={async () => {
                   'use server'
