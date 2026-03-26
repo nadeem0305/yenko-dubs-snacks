@@ -22,7 +22,6 @@ export function ProductGrid({ snacks }: { snacks: Product[] }) {
   const addItem = useCart((state) => state.addItem)
   const [searchQuery, setSearchQuery] = useState('')
 
-  // Filter snacks based on search query
   const filteredSnacks = useMemo(() => {
     return snacks.filter((snack) =>
       snack.name.toLowerCase().includes(searchQuery.toLowerCase()),
@@ -80,20 +79,30 @@ export function ProductGrid({ snacks }: { snacks: Product[] }) {
               </CardContent>
 
               <CardFooter className="p-2 md:p-4 pt-0">
-                <Button
-                  className="w-full py-7 uppercase font-black tracking-[0.2em] text-xs
+                {snack.is_available ? (
+                  <Button
+                    className="w-full py-7 uppercase font-black tracking-[0.2em] text-xs
                     hover:cursor-pointer transition-all duration-300 text-black
                     hover:scale-[1.02] active:scale-[0.98] bg-[#efbec6] hover:bg-[#fcd4db] hover:text-black
                     dark:shadow-[0_0_20px_rgba(16,185,129,0.1)]"
-                  onClick={() => {
-                    addItem(snack as any)
-                    toast.success(`${snack.name} added to cart`, {
-                      description: 'Check your cart to proceed to checkout.',
-                    })
-                  }}
-                >
-                  Add to Cart
-                </Button>
+                    onClick={() => {
+                      addItem(snack as any)
+                      toast.success(`${snack.name} added to cart`, {
+                        description: 'Check your cart to proceed to checkout.',
+                      })
+                    }}
+                  >
+                    Add to Cart
+                  </Button>
+                ) : (
+                  <Button
+                    disabled
+                    className="w-full py-7 uppercase font-black tracking-[0.2em] text-xs
+    bg-zinc-100 text-zinc-400 cursor-not-allowed border border-zinc-200"
+                  >
+                    Sold Out
+                  </Button>
+                )}
               </CardFooter>
             </Card>
           ))}
