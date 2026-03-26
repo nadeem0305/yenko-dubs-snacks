@@ -7,7 +7,9 @@ export async function getSnacks() {
     const snacks = await sql`
       SELECT * FROM snacks 
       -- WHERE is_available = true 
-      ORDER BY name ASC
+      ORDER BY 
+        is_available DESC, 
+        name ASC
     `
     return snacks
   } catch (error) {
