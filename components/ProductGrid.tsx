@@ -14,7 +14,6 @@ interface Product {
   name: string
   price: number
   image_url: string
-  category?: string
   is_available?: boolean
 }
 
@@ -86,7 +85,7 @@ export function ProductGrid({ snacks }: { snacks: Product[] }) {
                     hover:scale-[1.02] active:scale-[0.98] bg-[#efbec6] hover:bg-[#fcd4db] hover:text-black
                     dark:shadow-[0_0_20px_rgba(16,185,129,0.1)]"
                     onClick={() => {
-                      addItem(snack as any)
+                      addItem(snack as Product)
                       toast.success(`${snack.name} added to cart`, {
                         description: 'Check your cart to proceed to checkout.',
                       })
